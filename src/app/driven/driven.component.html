@@ -1,0 +1,217 @@
+<div class="f-container">
+  <mat-card>
+      <mat-card-title>Seus Dados</mat-card-title>
+    <mat-card-content>
+
+      <form
+        id="main"
+        (submit)="Enviar(senhaum.value,senhadois.value)"
+        #form="ngForm"
+
+        >
+
+        <div class="form">
+          <mat-form-field appearance="fill">
+            <mat-label>Nome</mat-label>
+            <input
+            type="text"
+            matInput
+            placeholder="Seu sobrenome..."
+            autocomplete="false"
+            required
+            minlength="4"
+            [formControl]="name"
+            >
+            <mat-error>
+              <span *ngIf="name.errors?.['minlength']">
+                Caracteres mínimas não correspondida
+              </span>
+              <span *ngIf="name.errors?.['required']">
+                Campo Obrigatório
+              </span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form">
+          <mat-form-field appearance="fill">
+            <mat-label>Sobrenome</mat-label>
+            <input type="text"
+            matInput
+            usuario="lastname"
+            autocomplete="false"
+            required
+            minlength="5"
+            [formControl]="lastname"
+
+            >
+              <mat-error>
+                <span *ngIf="lastname.errors?.['minlength']">
+                 Caracteres mínimas não correspondida
+                </span>
+                <span *ngIf="lastname.errors?.['required']">
+                  Campo Obrigatório
+                </span>
+              </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form">
+          <mat-form-field appearance="fill">
+            <mat-label>CPF</mat-label>
+            <input type="number"
+            matInput
+            usuario="cpf"
+            autocomplete="false"
+            required
+            minlength="11"
+            [formControl]="cpf"
+            >
+              <mat-error>
+                <span *ngIf="cpf.errors?.['minlength']">
+                Caracteres mínimas não correspondida
+                </span>
+                <span *ngIf="cpf.errors?.['required']">
+                  Campo Obrigatório
+                </span>
+              </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form">
+          <mat-form-field appearance="fill">
+            <mat-label>Telefone</mat-label>
+            <input type="number"
+            matInput
+            usuario="telefone"
+            autocomplete="false"
+            required
+            minlength="11"
+            [formControl]="telefone"
+            >
+              <mat-error>
+                <span *ngIf="telefone.errors?.['minlength']">
+                Caracteres mínimas não correspondida
+                </span>
+                <span *ngIf="telefone.errors?.['required']">
+                  Campo Obrigatório
+                </span>
+              </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form">
+          <mat-form-field appearance="fill">
+            <mat-label>Endereço</mat-label>
+            <input type="text"
+            matInput
+            usuario="endereco"
+            autocomplete="false"
+            required
+            [formControl]="endereco"
+            >
+              <mat-error>
+                <span *ngIf="endereco.errors?.['required']">
+                  Campo Obrigatório
+                </span>
+              </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form">
+          <mat-form-field appearance="fill">
+              <mat-label>Complemento</mat-label>
+              <input type="text"
+              matInput
+              usuario="complemento"
+              autocomplete="false"
+              required
+              [formControl]="complemento"
+              >
+                <mat-error>
+                  <span *ngIf="complemento.errors?.['required']">
+                    Campo Obrigatório
+                  </span>
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="form">
+          <mat-form-field appearance="fill">
+            <mat-label>Nome do Usuário</mat-label>
+            <input type="text"
+            matInput
+            usuario="usarname"
+            autocomplete="false"
+            required
+            minlength="10"
+            [formControl]="username"
+            >
+              <mat-error>
+                <span *ngIf="username.errors?.['minlength']">
+                Caracteres mínimas não correspondida
+                </span>
+                <span *ngIf="username.errors?.['required']">
+                  Campo Obrigatório
+                </span>
+              </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form">
+          <mat-form-field appearance="fill">
+            <mat-label>Senha</mat-label>
+            <input type="password"
+            matInput
+            usuario="senha"
+            autocomplete="false"
+            required
+            minlength="7"
+            [formControl]="senha"
+            #senhaum
+            >
+              <mat-error>
+                <span *ngIf="senha.errors?.['minlength']">
+                Caracteres mínimas não correspondida
+                </span>
+                <span *ngIf="senha.errors?.['required']">
+                  Campo Obrigatório
+                </span>
+              </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form">
+            <mat-form-field appearance="fill">
+              <mat-label>Senha</mat-label>
+              <input type="password"
+              matInput
+              usuario="senha2"
+              autocomplete="false"
+              required
+              minlength="7"
+              [formControl]="senha2"
+              #senhadois
+              >
+                <mat-error>
+                  <span *ngIf="senha2.errors?.['minlength']">
+                  Caracteres mínimas não correspondida
+                  </span>
+                  <span *ngIf="senha2.errors?.['required']">
+                    Campo Obrigatório
+                  </span>
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="bt">
+          <button mat-raised-button color="warn"
+          type="submit"
+          (click)="openDialog()"
+         >Cadastrar</button>
+        </div>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

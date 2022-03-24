@@ -1,0 +1,28 @@
+.f-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: lavenderblush;
+}
+
+mat-card-title{
+text-align: center;
+color: purple;
+}
+
+#main{
+  width: 270px;
+}
+
+.bt{
+  display: flex;
+  justify-content: center;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+}
+
+
